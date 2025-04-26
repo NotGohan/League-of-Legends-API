@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+@font-face {
+  font-family: 'BeaufortforLOL';
+  src: url('https://ff.cdn.1v1.lol/static/media/BeaufortforLOL-Bold.7c20855d.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@layer base {
+  body {
+    background: #010A13;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .champion-card {
+    @apply relative overflow-hidden transition-all duration-500;
+  }
+
+  .champion-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent opacity-0 transition-opacity duration-300;
+    z-index: 1;
+  }
+
+  .champion-card:hover::before {
+    @apply opacity-100;
+  }
+
+  .champion-card img {
+    @apply transition-transform duration-700;
+  }
+
+  .champion-card:hover img {
+    @apply scale-110;
+  }
+
+  .title-font {
+    font-family: "BeaufortforLOL", serif;
+  }
+
+  .search-container {
+    @apply relative max-w-2xl mx-auto mb-12;
+  }
+
+  .search-input {
+    @apply w-full px-6 py-4 pl-12 bg-[#1E282D] text-[#F0E6D2] rounded-lg 
+           border-2 border-[#463714] focus:outline-none focus:border-[#C89B3C] 
+           focus:ring-1 focus:ring-[#C89B3C] uppercase text-lg tracking-wider;
+  }
+
+  .search-icon {
+    @apply absolute left-4 top-1/2 transform -translate-y-1/2 text-[#C89B3C] text-xl;
+  }
+}
