@@ -45,3 +45,23 @@ export interface ChampionSkin {
   name: string;
   chromas: boolean;
 }
+
+export interface ChampionFilters {
+  roles: string[];
+  difficulty: string[];
+}
+
+export const CHAMPION_ROLES = [
+  'Fighter',
+  'Tank',
+  'Mage',
+  'Assassin',
+  'Support',
+  'Marksman'
+];
+
+export const CHAMPION_DIFFICULTIES = [
+  'Baja',
+  'Moderada',
+  'Alta'
+];
